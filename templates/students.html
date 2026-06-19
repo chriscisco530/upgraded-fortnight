@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Student Record System</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='students.css')}}">
+</head>
+
+<body>
+
+
+    <h1>Student Record System</h1>
+    <p>Enter student details below to add them to the system.</p>
+
+    <hr>
+    <div class="yuda">
+        <h2>Add New Student</h2>
+        <form action="/students" method="POST">
+            <div class="form1">
+                <label for="studentId">Student ID:</label>
+                <input type="text" id="studentId" name="studentId" required placeholder="e.g., STU101">
+            </div>
+            <br>
+            <div>
+                <label for="fullName">Full Name:</label>
+                <input type="text" id="fullName" name="fullName" required placeholder="John Doe">
+            </div>
+            <br>
+            <div>
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required placeholder="john@example.com">
+            </div>
+            <br>
+            <div>
+                <label for="course">Course/Major:</label>
+                <select id="course" name="course" required>
+                    <option value="" disabled selected>Select a course</option>
+                    <option value="CS">Computer Science</option>
+                    <option value="IT">Information Technology</option>
+                    <option value="IS">Information system</option>
+                    <option value="CSC">cybersecurity</option>
+                </select>
+            </div>
+            <br>
+    </div>
+    <button type="submit">Register Student</button>
+
+    </form>
+
+    <hr>
+
+
+    <h2>Student List</h2>
+    <table border="1">
+
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>course</th>
+        </tr>
+        {% for student in students %}
+        <tr>
+            <td>{{student[0]}}</td>
+            <td>{{student[1]}}</td>
+            <td>{{student[2]}}</td>
+            <td>{{student[3]}}</td>
+            <td>
+                <form action="/delete/{{student[0]}}"method="POST">
+                    <button type="submit">delete</button>
+                </form>
+                </td>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    </table>
+
+    <script src="{{url_for('static',filename='stdnts.js')}}"></script>
+</body>
+</html>

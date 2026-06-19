@@ -1,0 +1,48 @@
+body {
+    background-color: rgb(14, 3, 15);
+    font-weight: 100em;
+    color: beige;
+    font-style: italic;
+}
+
+.yuda {
+    backdrop-filter: blur(5px);
+    color: whitesmoke;
+    background: linear-gradient(150deg, #190230, #8f4ebd, #47057c);
+
+}
+
+table {
+    border-collapse: collapse;
+    width: 60em;
+    color: aliceblue;
+    border-width: 0.30em;
+    border-style: solid;
+    border-color: white;
+    font-style: normal
+}
+
+
+.form-section {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+}
+
+.yusa {
+    background-color: rgb(7, 6, 1);
+    color: #dbcfcf;
+    border: 1px solid #050505;
+    padding: 4px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.yusa:hover {
+    background-color: #050505;
+    color: rgb(214, 21, 21);
+    border-color: rgb(12, 12, 12);
+    font-style: italic;
+
+}
